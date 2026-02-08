@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathya T - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 15px;
+            padding: 8px 15px;
+            border: 1px solid #0066cc;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        .back-link i {
+            margin-right: 5px;
+        }
+
+        .name {
+            color: #2c3e50;
+            margin: 15px 0 5px;
+            font-size: 28px;
+        }
+
+        .title {
+            color: #0066cc;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .contact {
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .contact div {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact i {
+            color: #666;
+            width: 18px;
+        }
+
+        /* PDF Section */
+        .pdf-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .pdf-header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .pdf-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        .pdf-header h2 i {
+            margin-right: 8px;
+        }
+
+        .pdf-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #0066cc;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #0055aa;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2c3e50;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        .note {
+            background: #fff3cd;
+            padding: 12px 15px;
+            margin: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #ffc107;
+            font-size: 14px;
+            color: #856404;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .note i {
+            margin-top: 2px;
+            color: #856404;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        .contact-btn {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-btn .btn {
+            padding: 10px 25px;
+            font-size: 15px;
+        }
+
+        /* Resume Content */
+        .resume-content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #e0e0e0;
+        }
+
+        .item-header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            color: #666;
+            font-size: 14px;
+            background: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 12px;
+            align-self: flex-start;
+        }
+
+        .item p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill {
+            background: #e9ecef;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .title {
+                font-size: 16px;
+            }
+            
+            .pdf-viewer {
+                height: 400px;
+            }
+            
+            .pdf-header h2 {
+                font-size: 18px;
+            }
+            
+            .resume-content {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .contact div {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 15px;
+            }
+            
+            .name {
+                font-size: 22px;
+            }
+            
+            .pdf-viewer {
+                height: 350px;
+            }
+            
+            .pdf-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pdf-actions .btn {
+                width: 100%;
+                max-width: 200px;
+                margin: 5px 0;
+            }
+            
+            .pdf-header {
+                padding: 12px;
+            }
+            
+            .note {
+                margin: 10px;
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .skills {
+                gap: 8px;
+                justify-content: center;
+            }
+            
+            .skill {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+            
+            .item-header {
+                align-items: flex-start;
+            }
+            
+            .item-date {
+                margin-top: 5px;
+            }
+            
+            .contact-btn .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .pdf-viewer {
+                height: 300px;
+            }
+            
+            .name {
+                font-size: 20px;
+            }
+            
+            .title {
+                font-size: 15px;
+            }
+            
+            .container {
+                padding: 8px;
+            }
+            
+            .header,
+            .pdf-section,
+            .resume-content {
+                padding: 12px;
+            }
+            
+            .skills {
+                gap: 6px;
+            }
+            
+            .skill {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+            
+            .btn {
+                padding: 7px 14px;
+                font-size: 13px;
+            }
+            
+            .section-title {
+                font-size: 17px;
+            }
+            
+            .footer {
+                font-size: 13px;
+                padding: 15px 0;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .pdf-viewer {
+                height: 600px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1025px) {
+            .pdf-viewer {
+                height: 650px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .back-link,
+            .pdf-actions,
+            .contact-btn,
+            .footer {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .header,
+            .pdf-section,
+            .resume-content {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin: 10px 0;
+            }
+            
+            .pdf-viewer {
+                height: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            
+            <h1 class="name">SATHYA T</h1>
+            <h2 class="title">Web Developer</h2>
+            
+            <div class="contact">
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <span>sathyawebdeveloper05@gmail.com</span>
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9361797655</span>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Thanjavur, Tamil Nadu</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Section -->
+        <div class="pdf-section">
+            <div class="pdf-header">
+                <h2><i class="fas fa-file-pdf"></i> Resume PDF</h2>
+                <div class="pdf-actions">
+                    <a href="index.html" class="btn btn-secondary">Back</a>
+                    <a href="images/Sathya.Reasume.pdf" download="Sathya_Resume.pdf" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+            
+            <div class="note">
+                <i class="fas fa-info-circle"></i>
+                <span>This is a public version. For details, please contact me.</span>
+            </div>
+            
+            <iframe src="images/Sathya.Reasume.pdf" class="pdf-viewer" title="Sathya Resume"></iframe>
+            
+            <div class="contact-btn">
+                <a href="mailto:sathyawebdeveloper05@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+        </div>
+
+        <!-- Resume Content -->
+        <div class="resume-content">
+            <div class="section">
+                <h2 class="section-title">About</h2>
+                <p>B.Com (Computer Applications) graduate skilled in HTML, CSS, JavaScript, and Bootstrap. Knowledge of PHP, Python, and SQL. Seeking entry-level web development opportunities.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">B.com(Computer Applications)</div>
+                        <div class="item-date">2022 - 2025</div>
+                    </div>
+                    <p>Don Bosco College, Tamil Nadu</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Web Developer Intern</div>
+                        <div class="item-date">2025</div>
+                    </div>
+                    <p>Built responsive websites and web applications.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Bootstrap</span>
+                    <span class="skill">PHP</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">MySQL</span>
+                    <span class="skill">WordPress</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">VS Code</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 Sathya T. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
